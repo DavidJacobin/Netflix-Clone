@@ -5,9 +5,11 @@ import avatar from '../assets/images/avatar-logo.jpg'
 
 function Nav() {
   return (
-    <div className='nav'>
-        <img className='nav_logo' src={logo} alt="logo"/>
-        <img className='nav_icon' src={avatar} alt="avatar"/>
+    <div className='nav nav__black'>
+        <div className="nav__container">
+            <img className='nav__logo' src={logo} alt="logo"/>
+            <img className='nav__icon' src={avatar} alt="avatar"/>
+        </div>
     </div>
   )
 }
