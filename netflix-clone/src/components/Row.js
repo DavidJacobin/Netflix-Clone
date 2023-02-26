@@ -4,7 +4,7 @@ import axios from '../util/axios.js';
 
 const baseUrl = 'http://image.tmdb.org/t/p/original'
 
-function Row({title, fetchURL}) {
+function Row({ title, fetchURL }) {
 
     const [movies, setMovie] = useState([]);
 
@@ -17,17 +17,19 @@ function Row({title, fetchURL}) {
         fetchData();
     }, [fetchURL])
     console.log(movies);
-  return (
-    <div className='row'>
-        <h2>{title}</h2>
-        {movies.map((movie) =>(
-            <img 
-                src={`http://image.tmdb.org/t/p/w500${movie.backdrop_path}`} 
-                alt={movie.name}
-            />)
-            )}
-    </div>
-  )
+    return (
+        <div className='row'>
+            <h2 className='title'>{title}</h2>
+            <div className='row__posters'>
+                {movies.map((movie) => (
+                    <img className='row__poster' key={movie.id}
+                        src={`http://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                        alt={movie.name}
+                    />)
+                )}
+            </div>
+        </div>
+    )
 }
 
 export default Row
