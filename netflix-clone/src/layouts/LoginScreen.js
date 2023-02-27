@@ -4,9 +4,10 @@ import '../assets/styles/LoginScreen.css'
 function LoginScreen() {
   return (
     <div className='loginScreen'>
-        <h1>HELOO
+        <div className='background'>
+            <img src=''></img>
 
-        </h1>
+        </div>
     </div>
   )
 }
