@@ -4,17 +4,37 @@
 }
 
 .background__img{
-    position:absolute;
-    height: 100%;
+    position:fixed;
     width: 100%;
-    background-size: cover;
+    height: 100%;
+    
 }
 
-.loginScreen__gradient{
-    width: 100%;
-    z-index: 1;
-    height: 100vh;
-    background: rgb(0, 0, 0, 0.4);
+
+.loginScreen__body{
+    position: fixed;
+    top: 30%;
+    color: white;
+    padding: 40px;
+    margin-left: 15%;
+    text-align: center;
+}
+
+.loginScreen__body>h1{
+    margin-bottom: 20px;
+    font-size: 3.125rem;
+}
+
+.loginScreen__body>h2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.loginScreen__body>h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    
 }
 
 .loginScreen__button{
