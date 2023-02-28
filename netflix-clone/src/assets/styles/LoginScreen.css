@@ -20,10 +20,11 @@
     text-align: center;
     left: 0;
     right: 300px;
+    top: 100px;
 }
 
 .loginScreen__body>h1{
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-size: 3.125rem;
 }
 
@@ -81,4 +82,9 @@
     border: none;
     font-weight: 600px;
     cursor: pointer;
+}
+
+.singInScreen__link:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

@@ -11,7 +11,8 @@ function SingInScreen() {
             <button type='submit'>Sing In</button>
         
             <h4>
-                <span className='singInScreen__gray'>New to Netflix?</span> Sing Up Now.</h4>
+                <span className='singInScreen__gray'>New to Netflix? </span>
+                <span className='singInScreen__link'>Sing Up Now.</span> </h4>
         </form>
     </div>
   )
