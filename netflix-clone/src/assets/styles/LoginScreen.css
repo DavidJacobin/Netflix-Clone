@@ -18,6 +18,8 @@
     padding: 40px;
     margin-left: 15%;
     text-align: center;
+    left: 0;
+    right: 300px;
 }
 
 .loginScreen__body>h1{
