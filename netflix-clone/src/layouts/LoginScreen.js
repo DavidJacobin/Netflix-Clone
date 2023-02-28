@@ -16,12 +16,13 @@ function LoginScreen() {
             <div className='loginScreen__body'>
                 <h1>Unlimited film, TV programmes and more.</h1>
                 <h2>Watch anywhere. Cancel anytime.</h2>
-                <h3>Ready to watch? Enter your email to 
-                    create or restart your membership
+                <h3>Ready to watch? Enter your email to
+                    create or restart your membership.
                 </h3>
                 <div className='loginScreen__input'>
                     <form>
                         <input type="email" placeholder='Email Address'></input>
+                        <button className='loginScreen_inputButton'>GET STARTED</button>
                     </form>
                 </div>
             </div>
