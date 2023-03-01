@@ -1,5 +1,6 @@
-import firebase from 'firebase';
-
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 
 
@@ -19,5 +20,5 @@ const db = firebaseApp.firestore();
 
 const auth = firebase.auth();
 
-export {auth};
-export default db;
+export {auth, db}
+//export default db;
