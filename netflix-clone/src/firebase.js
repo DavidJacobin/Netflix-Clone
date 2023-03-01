@@ -1,3 +1,8 @@
+import firebase from 'firebase';
+
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyDIB8vLoiAaVcqxNUrfW3rlOKqvobSJLHM",
     authDomain: "netflix-clone-fc38c.firebaseapp.com",
@@ -6,3 +11,13 @@ const firebaseConfig = {
     messagingSenderId: "164405180560",
     appId: "1:164405180560:web:49b849627b4e164af88015"
   };
+
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const db = firebaseApp.firestore();
+
+const auth = firebase.auth();
+
+export {auth};
+export default db;
