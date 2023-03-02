@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
-import {login, logout} from './features/userSlice'
+import {login, logout, selectUser} from './features/userSlice'
 
 import './App.css';
 import { auth } from './firebase';
@@ -10,7 +10,7 @@ import LoginScreen from './layouts/LoginScreen.js';
 
 function App() {
 
-    const user = null;
+    const user = useSelector(selectUser);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -26,18 +26,21 @@ function App() {
         })
 
         return unsubscribe;
-    });
+    },[]);
 
     return (
         <div className="app">
-
-
             <Router>
+                {!user ? (
+                    <LoginScreen/>
+                ) : (
+                
                 <Routes>
                     <Route path='/' element={<HomeScreen />} />
                     <Route path='/login' element={<LoginScreen />} />
 
                 </Routes>
+                )}
 
             </Router>
         </div>
