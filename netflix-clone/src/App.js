@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import {login, logout} from './features/userSlice'
 
 import './App.css';
 import { auth } from './firebase';
@@ -8,32 +10,38 @@ import LoginScreen from './layouts/LoginScreen.js';
 
 function App() {
 
-  useEffect(() =>{
-    const unsubscribe = auth.onAuthStateChanged((userAuth) =>{
-      if(userAuth){
+    const user = null;
+    const dispatch = useDispatch()
 
-      }else{
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+            if (userAuth) {
+                dispatch(login({
+                    uid: userAuth.uid,
+                    email: userAuth.email
+                }));
+            } else {
+                dispatch(logout)
+            };
+        })
 
-      };
-    })
+        return unsubscribe;
+    });
 
-    return unsubscribe;
-  });
-  
-  return (
-    <div className="app">
+    return (
+        <div className="app">
 
 
-      <Router>
-        <Routes>
-        <Route path='/' element={<HomeScreen />}/>
-        <Route path='/login' element={<LoginScreen />}/>
+            <Router>
+                <Routes>
+                    <Route path='/' element={<HomeScreen />} />
+                    <Route path='/login' element={<LoginScreen />} />
 
-        </Routes>
-        
-      </Router>
-    </div>
-  );
+                </Routes>
+
+            </Router>
+        </div>
+    );
 }
 
 export default App;
