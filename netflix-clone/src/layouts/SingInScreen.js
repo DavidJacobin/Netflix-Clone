@@ -14,7 +14,7 @@ function SingInScreen() {
             emailRef.current.value,
             passwordRef.current.value
         ).then(() =>{
-
+            console.log(emailRef);
         }).catch((error) => {alert(error.message)});
 
     }
@@ -26,7 +26,7 @@ function SingInScreen() {
             emailRef.current.value,
             passwordRef.current.value
         ).then(() =>{
-
+            console.log(emailRef);
         }).catch((error) => {alert(error.message)});
     }
 
