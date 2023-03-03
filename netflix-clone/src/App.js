@@ -7,10 +7,11 @@ import './App.css';
 import { auth } from './firebase';
 import HomeScreen from './layouts/HomeScreen';
 import LoginScreen from './layouts/LoginScreen.js';
+import ProfileScreen from './layouts/ProfileScreen';
 
 function App() {
 
-    const user = useSelector(selectUser);
+    const user =  useSelector(selectUser);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -31,13 +32,14 @@ function App() {
     return (
         <div className="app">
             <Router>
-                {!user ? (
+                {user ? (
                     <LoginScreen/>
                 ) : (
                 
                 <Routes>
                     <Route path='/' element={<HomeScreen />} />
                     <Route path='/login' element={<LoginScreen />} />
+                    <Route path='/profile' element={<ProfileScreen />} />
 
                 </Routes>
                 )}
